@@ -1,0 +1,10 @@
+.wp-block-image {
+  margin-bottom: 2rem;
+  &.size-full {
+    max-width: 100%;
+  }
+  &.size-full img {
+    width: 100%;
+    border-radius: .5rem;
+  }
+}
