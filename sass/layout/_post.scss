@@ -1,0 +1,121 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.post {
+
+  &__header {
+    position: relative;
+  }
+
+  &__metas {
+    display: none;
+    gap: .75rem;
+    align-items: center;
+    margin-bottom: calc(map-get($sizes, m) + map-get($sizes, xs));
+    border-bottom: 1px solid $border-color;
+    padding-bottom: map-get($sizes, xs);
+    font-size: .75rem;
+    .author {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      img {
+        width: map-get($sizes, l);
+        height: map-get($sizes, l);
+        border-radius: 100%;
+      }
+    }
+    .date {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      svg {
+        font-size: .75rem;
+        width: .75rem;
+      }
+    }
+  }
+
+  &__content {
+    padding-top: calc(map-get($sizes, xl) + map-get($sizes, s));
+
+    @include mq(md) {
+      background: $white-color;
+      border-radius: map-get($sizes, xs);
+      padding-top: calc(map-get($sizes, xl) + map-get($sizes, m));
+    }
+
+    @include mq(lg) {
+      padding-top: map-get($sizes, m);
+      display: grid;
+      grid-template-columns: 1fr 19rem;
+      gap: map-get($sizes, l);
+    }
+    
+    @include mq(xl) {
+      grid-template-columns: 1fr 21rem;
+      gap: map-get($sizes, xl);
+    }
+  }
+
+  &__breadcrumb {
+    margin-bottom: map-get($sizes, s);
+  }
+
+  &__navigation {
+    display: grid;
+    grid-column: 1 / 2;
+    margin-top: 1rem;
+
+    @include mq(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    [class*="__title"] {
+      text-transform: capitalize;
+      margin: 0;
+    }
+
+    article {
+      min-height: map-get($sizes, xxl);
+      display: flex;
+      align-items: center;
+    }
+
+    &--next {
+      justify-content: flex-end;
+      @include mq(lg) {
+        grid-column: 2 / 3;
+      }
+      [class*="read-more"] {
+        font-size: 1.8rem;
+        line-height: 1;
+      }
+    }
+  
+    &--prev {
+      justify-content: flex-start;
+      @include mq(lg) {
+        grid-column: 1 / 2;
+      }
+      [class*="read-more"] {
+        left: map-get($sizes, m);
+        transform: rotate(180deg);
+        right: auto;
+        font-size: 1.8rem;
+        line-height: 1;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+

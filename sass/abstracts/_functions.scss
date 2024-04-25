@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+// FUNCTION SIZES
+@function getsize($size) {
+  @return map-get($sizes, $size);
+}
+
+@function pxrem($valor, $base: 16px) {
+  @return math.div($valor, $base) + rem;
+}

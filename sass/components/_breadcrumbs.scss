@@ -1,0 +1,16 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.breadcrumbs {
+  font-size: 0.75rem;
+  color: $muted-color;
+  align-items: center;
+  display: flex;
+  gap: map-get($sizes, xs);
+  a {
+    font-size: inherit;
+    color: $text-color;
+    text-decoration: none;
+  }
+}

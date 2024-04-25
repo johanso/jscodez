@@ -1,0 +1,41 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.wp-block-kevinbatdorf-code-block-pro {
+  border-radius: .5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.wp-block-kevinbatdorf-code-block-pro:not(.code-block-pro-editor) > pre {
+  padding-left: 1.5rem !important;
+  padding-top: 1.5rem !important;
+}
+
+.custom-reaction {
+  display: flex;
+  .wpra-reactions-wrap.wpra-plugin-container.wpra-rendered {
+    border-top: 1px solid $border-color;
+  }
+
+  .wpra-reaction.active {
+    transform: none;
+  }
+  
+  .wpra-reactions-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+  }
+  
+  .wpra-share-wrap.wpra-share-buttons-bordered {
+    margin: 0;
+  }
+  
+  .wpra-reactions-wrap.wpra-plugin-container.wpra-rendered {
+    width: 100%;
+  }
+}

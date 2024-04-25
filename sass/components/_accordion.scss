@@ -1,0 +1,53 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.accordion {
+  &__container {
+    position: relative;
+    margin: map-get($sizes, s) 0;
+    &.active {
+      [class*="__content"] {
+        height: auto;
+      }
+      [class*="__label"] {
+        &::before {
+          content: "\e900";
+        }
+      }
+    }
+  }
+  &__label {
+    font-size: 1.1rem;
+    position: relative;
+    margin-bottom: 0;
+    cursor: pointer;
+    &::before {
+      font-family: var(--font-icons) !important;
+      content: "\e901";
+      color: rgba($text-color, 0.6);
+      font-weight: 300;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      font-size: 1.25rem;
+      transform: translateY(-50%);
+    }
+    @include mq(md) {
+      font-size: 1.25rem;
+    }
+  }
+  &__content {
+    position: relative;
+    background: $white-color;
+    height: 0;
+    text-align: justify;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  &__hr {
+    width: 100;
+    margin-left: 0;
+    border: 1px solid $border-color;
+  }
+}

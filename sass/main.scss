@@ -1,0 +1,40 @@
+
+/*!
+  Theme Name: Moz
+  Theme URI: 
+  Author: Johan Ricardo
+  Author URI: johanricardo.co
+  Description: Theme diseñado para los proyectos moz
+  Version: 1.0
+  License: GNU General Public License v2 or later
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Text Domain: traveltheme
+*/
+
+// ABSTRACTS
+@use 'abstracts/_functions';
+@use 'abstracts/_variables';
+@use 'abstracts/_mixins';
+
+// BASE
+@use 'base/_base';
+@use 'base/_fonts';
+@use 'base/_typography';
+
+// COMPONENTS
+@use 'components/_buttons';
+@use 'components/_header';
+@use 'components/_nav-top';
+@use 'components/_accordion';
+@use 'components/_list-group-post';
+@use 'components/_breadcrumbs';
+@use 'components/_sidebar';
+@use 'components/_backdrop';
+@use 'components/_footer';
+@use 'components/_go-top';
+@use 'components/_plugins';
+
+// LAYOUT
+@use 'layout/_home';
+@use 'layout/_page';
+@use 'layout/_post';

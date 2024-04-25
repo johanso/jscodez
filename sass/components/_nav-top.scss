@@ -1,0 +1,87 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.nav-top {
+  display: none;
+  position: absolute;
+  width: 100svw;
+  left: 0;
+  margin: 0;
+
+  &__menu {
+    background: $white-color;
+    box-shadow: 0px 6px 10px rgba(0,0,0,.16);
+    position: absolute;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    top: calc(map-get($sizes, m) + map-get($sizes, s) + map-get($sizes, xs));
+    width: 100%;
+
+    .menu-item {
+      border-bottom: 1px solid $tertiary-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        font-size: .9rem;
+        font-weight: 500;
+        color: $text-color;
+        display: flex;
+        position: relative;
+        align-items: center;
+        height: map-get($sizes, xxl);
+        text-decoration: none;
+        width: 100%;
+
+        @include mq(md) {
+          height: 100%;
+
+          &[aria-current="page"]::after {
+            content: '';
+            background: $primary-color;
+            height: map-get($sizes, xs);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+          }
+        }
+      }
+
+      @include mq(md) {
+        border-bottom: none;
+      }
+    }
+
+    .sub-menu {
+      display: none;
+    }
+
+    @include mq(md) {
+      display: flex;
+      gap: calc(map-get($sizes, l) + map-get($sizes, xs));
+      box-shadow: none;
+      position: relative;
+      height: 100%;
+      padding: 0;
+      top: 0;
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+
+  @include mq(md) {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    width: auto;
+    height: 100%;
+  }
+}

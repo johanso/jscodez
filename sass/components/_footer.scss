@@ -1,0 +1,14 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  font-size: .65rem;
+  border-top: 1px solid $border-color;
+  height: map-get($sizes, xxl) ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__copyright {
+    margin: 0;
+  }
+}

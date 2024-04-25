@@ -1,0 +1,25 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.goto-top {
+  width: map-get($sizes, xxl);
+  height: map-get($sizes, xxl);
+  background: $primary-color;
+  position: fixed;
+  bottom: map-get($sizes, s);
+  right: map-get($sizes, s);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(5rem);
+  transition: all .3s ease;
+  cursor: pointer;
+  &.visible {
+    transform: translateY(0);
+  }
+  i {
+    font-size: map-get($sizes, l);
+  }
+}

@@ -1,0 +1,30 @@
+@use "sass:math";
+@use './functions' as *;
+
+// COLORS
+$primary-color: #f0db4f;
+$secondary-color: #323330;
+$tertiary-color: #F0F0F0;
+$white-color: #ffffff;
+$text-color: rgba(0,0,0,.9);
+$muted-color: rgba(0,0,0,.5);
+$border-color: #F0F0F0;
+
+// SIZES
+$sizes: (
+  xs: pxrem(4px),
+  s: pxrem(8px),
+  m: pxrem(16px),
+  l: pxrem(24px),
+  xl: pxrem(32px),
+  xxl: pxrem(48px),
+  xxxl: pxrem(64px)
+);
+
+// MEDIA QUERIES
+$media-queries: (
+  sm: pxrem(540px),
+  md: pxrem(720px),
+  lg: pxrem(960px),
+  xl: pxrem(1200px)
+);

@@ -1,0 +1,47 @@
+@use './variables' as *;
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin mq($breakpoint) {
+  $size: map-get($media-queries, $breakpoint);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// Mixin para aplicar estilos responsivos basados en media queries
+@mixin responsive-container() {
+  margin: 0 1rem;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include mq(sm) {
+    max-width: map-get($media-queries, sm);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include mq(md) {
+    max-width: map-get($media-queries, md);
+  }
+  @include mq(lg) {
+    max-width: map-get($media-queries, lg);
+  }
+  @include mq(xl) {
+    max-width: map-get($media-queries, xl);
+  }
+}
+
+@mixin box-shadow-site() {
+  box-shadow: 15px 15px 0 -4px #f0db4f, 15px 15px $secondary-color;
+}
