@@ -25,7 +25,9 @@ function custom_posts_shortcode($atts) {
             $output .= '<h3 class="list-group__title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
             $output .= '<div class="list-group__excerpt">' . custom_excerpt(get_the_excerpt(), 100) . '</div>';
             $output .= '<a href="' . get_permalink() . '" class="list-group__read-more icon-arrow-right"></a>';
-            $output .= '<span class="list-group__version">' . $versionJs . '</span>';
+            if($versionJs) {
+                $output .= '<span class="list-group__version">' . $versionJs . '</span>';
+            } 
             $output .= '</article>';
         }
         $output .= '</section>';
