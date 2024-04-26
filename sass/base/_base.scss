@@ -48,6 +48,12 @@ samp {
   font-size: 1em; /* 2 */
 }
 
+ol, ul {
+  box-sizing: border-box;
+  padding: 0;
+  padding-left: 1rem;
+}
+
 code {
   background: #F0F0F0;
   border-radius: 4px;
