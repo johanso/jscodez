@@ -24,9 +24,6 @@
     </section>
     
     <div class="container__inner">
-      <div class="post__image">
-        <?php if( has_post_thumbnail() ) { the_post_thumbnail('full', array('class' => 'post__image')); } ?>
-      </div>
       <?php the_content(); ?>
     </div>
   </div> 
