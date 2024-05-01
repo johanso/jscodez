@@ -6,5 +6,4 @@
   @include responsive-container();
   margin-top: calc(map-get($sizes, xxxl) + map-get($sizes, l));
   margin-bottom: map-get($sizes, xl);
-
 }
