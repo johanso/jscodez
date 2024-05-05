@@ -46,6 +46,10 @@
     font-size: .95rem;
     line-height: 1.4;
     margin-bottom: calc(map-get($sizes, m) + map-get($sizes, xs));
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
     @include mq(md) {
       margin-bottom: calc(map-get($sizes, xl) - map-get($sizes, xs));
     }
