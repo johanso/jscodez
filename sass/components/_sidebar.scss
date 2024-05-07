@@ -99,6 +99,13 @@
         &:last-child {
           border-bottom: none;
         }
+        &.current-menu-item {
+          a {
+            @include mq(lg) {
+              background: rgba($secondary-color, 0.02);
+            }
+          }
+        }
       }
       a {
         text-decoration: none;
@@ -121,6 +128,9 @@
       margin-bottom: map-get($sizes, m);
       @include mq(lg) {
         margin-bottom: map-get($sizes, xs);
+        &:last-child {
+          margin-bottom: 0;
+        }
         &.active {
           .sub-menu {
             transition: all .3s ease-out;
