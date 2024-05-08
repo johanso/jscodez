@@ -96,6 +96,7 @@
       }
       > li {
         border-bottom: 1px solid $border-color;
+        position: relative;
         &:last-child {
           border-bottom: none;
         }
@@ -103,6 +104,18 @@
           a {
             @include mq(lg) {
               background: rgba($secondary-color, 0.02);
+            }
+            &::after {
+              @include mq(lg) {
+                content: '';
+                left: 0;
+                width: map-get($sizes, xs);
+                height: 100%;
+                background: $success-color;
+                display: flex;
+                position: absolute;
+                top: 0;
+              }
             }
           }
         }
@@ -128,7 +141,7 @@
       margin-bottom: map-get($sizes, m);
       @include mq(lg) {
         margin-bottom: map-get($sizes, xs);
-        &:last-child {
+        &.active {
           margin-bottom: 0;
         }
         &.active {

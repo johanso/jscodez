@@ -47,11 +47,15 @@ const initPageFunctionalities = () => {
   }
 
   // Accordion Sidebar
-  accordionTitles[0]?.classList.add('active')
-  const firstSubMenu = accordionTitles[0]?.querySelector('.sub-menu');
-  if(firstSubMenu) {
-    firstSubMenu.style.maxHeight = firstSubMenu.scrollHeight + "px";
-  }
+  accordionTitles.forEach(title => {
+    const itemActive = title.querySelector('.sub-menu .current-menu-item');
+    if (itemActive) {
+      title.classList.add('active');
+      const subMenu = title.querySelector('.sub-menu');
+      subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+    }
+  })
+
   accordionTitles.forEach(title => {
     title.addEventListener('click', () => {
       title.classList.toggle('active');
