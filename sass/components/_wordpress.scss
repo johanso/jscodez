@@ -14,3 +14,24 @@
   float: left;
   margin-right: 1rem;
 }
+
+pre.wp-block-code.consola {
+  margin: -4.25rem 0 1rem;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 0;
+  &::before {
+    content: 'consola';
+    position: absolute;
+    left: 0;
+    background: #e3e3e3;
+    width: calc(100% - 2rem);
+    padding: .15rem 1rem;
+    font-size: .9rem;
+    top: 2rem;
+  }
+  code {
+    border-radius: 0 0 .75rem .75rem;
+    padding: 2.5rem 1rem .5rem;
+  }
+}

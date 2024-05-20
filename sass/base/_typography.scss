@@ -45,7 +45,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: calc(var(--rhythm) + (var(--rhythm) * var(--rhythm-increase, 0)));
   margin: 0 0 var(--rhythm);
   font-weight: $font-weight-bold;
-  text-transform: capitalize;
 }
 
 p {
