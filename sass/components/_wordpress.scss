@@ -21,10 +21,10 @@ pre.wp-block-code.consola {
   position: relative;
   z-index: 0;
   &::before {
-    content: 'consola';
+    content: ">";
     position: absolute;
     left: 0;
-    background: #e3e3e3;
+    background: #ffffff;
     width: calc(100% - 2rem);
     padding: .15rem 1rem;
     font-size: .9rem;

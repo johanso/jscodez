@@ -59,6 +59,13 @@
     }
   }
 
+  &__container {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
   &__breadcrumb {
     margin-bottom: map-get($sizes, s);
   }
