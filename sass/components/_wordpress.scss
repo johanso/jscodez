@@ -24,14 +24,17 @@ pre.wp-block-code.consola {
     content: ">";
     position: absolute;
     left: 0;
-    background: #ffffff;
+    background: #f0f0f0;
     width: calc(100% - 2rem);
-    padding: .15rem 1rem;
+    padding: 0.15rem 1rem;
     font-size: .9rem;
     top: 2rem;
+    height: 1rem;
+    line-height: 1;
+    border-bottom: 1px solid #d9d9d9;
   }
   code {
     border-radius: 0 0 .75rem .75rem;
-    padding: 2.5rem 1rem .5rem;
+    padding: 1.5rem 1rem .5rem;
   }
 }
