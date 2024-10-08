@@ -57,9 +57,10 @@ ol, ul {
 h2 code, 
 h3 code, 
 h4 code  {
-  background-color: rgba(0, 0, 0, .02);
+  background-color: transparent;
   color: inherit;
-  font-size: inherit;
+  font-size: calc(100% - .25rem);
+  line-height: 1;
 }
 
 code {
