@@ -9,7 +9,19 @@ function custom_posts_shortcode($atts) {
         'custom_posts'
     );
 
-    $ids = explode(',', $atts['ids']);
+    // Verificar si se pasaron los IDs
+    if (empty($atts['ids'])) {
+        return '<p>No se especificaron IDs de publicaciones.</p>';
+    }
+
+    // Limpiar espacios y convertir a array
+    $ids = array_map('intval', array_filter(array_map('trim', explode(',', $atts['ids']))));
+
+    // Si no hay IDs válidos después de la conversión, retornamos un mensaje
+    if (empty($ids)) {
+        return '<p>No se encontraron IDs válidos.</p>';
+    }
+
     $posts_query = new WP_Query(array(
         'post__in' => $ids,
         'orderby' => 'post__in',
@@ -22,12 +34,23 @@ function custom_posts_shortcode($atts) {
             $posts_query->the_post();
             $versionJs = get_field('version_js');
             $output .= '<article class="list-group__post">';
-            $output .= '<h3 class="list-group__title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
-            $output .= '<div class="list-group__excerpt">' . custom_excerpt(get_the_excerpt(), 100) . '</div>';
-            $output .= '<a href="' . get_permalink() . '" class="list-group__read-more icon-arrow-right"></a>';
-            if($versionJs) {
-                $output .= '<span class="list-group__version">' . $versionJs . '</span>';
-            } 
+            $output .= '<h3 class="list-group__title"><a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a></h3>';
+            $output .= '<div class="list-group__excerpt">' . esc_html(custom_excerpt(get_the_excerpt(), 100)) . '</div>';
+
+            // Obtener y mostrar las etiquetas sin enlaces
+            $tags = get_the_tags();
+            if ($tags) {
+                $output .= '<ul class="list-group__tags">';
+                foreach ($tags as $tag) {
+                    $output .= '<li class="list-group__tag">' . esc_html($tag->name) . '</li>';
+                }
+                $output .= '</ul>';
+            }
+
+            $output .= '<a href="' . esc_url(get_permalink()) . '" class="list-group__read-more icon-arrow-right"></a>';
+            if ($versionJs) {
+                $output .= '<span class="list-group__version">' . esc_html($versionJs) . '</span>';
+            }
             $output .= '</article>';
         }
         $output .= '</section>';
@@ -38,6 +61,8 @@ function custom_posts_shortcode($atts) {
     }
 }
 add_shortcode('custom_posts', 'custom_posts_shortcode');
+
+
 
 // Función para limitar el extracto a cierta cantidad de caracteres
 function custom_excerpt($text, $limit) {

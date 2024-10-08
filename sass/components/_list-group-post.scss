@@ -67,6 +67,19 @@
     top: 0;
   }
 
+  &__tags {
+    list-style: none;
+    display: flex;
+    font-size: .75rem;
+    padding: 0;
+    margin: 0;
+    gap: .25rem;
+  }
+  &__tag {
+    background: #fafafa;
+    padding: 0 .5rem;
+  }
+
   &__read-more {
     text-decoration: none;
     font-size: 1.5rem;
