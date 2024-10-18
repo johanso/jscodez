@@ -8,6 +8,10 @@
   align-items: center;
   display: flex;
   gap: map-get($sizes, xs);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   a {
     font-size: inherit;
     color: $text-color;
