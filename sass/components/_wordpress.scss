@@ -27,5 +27,14 @@ pre.wp-block-code.consola {
 }
 
 hr.wp-block-separator {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+:root :where(hr.wp-block-separator.is-style-dots) {
+  text-align: left;
+  &::before {
+    font-family: 'Cairo';
+    font-size: 1.75rem;
+    letter-spacing: .75rem;
+    padding-left: 0;
+  }
 }
