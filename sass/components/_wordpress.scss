@@ -29,6 +29,7 @@ pre.wp-block-code.consola {
 hr.wp-block-separator {
   margin-bottom: 1rem;
 }
+
 :root :where(hr.wp-block-separator.is-style-dots) {
   text-align: left;
   &::before {
@@ -37,4 +38,16 @@ hr.wp-block-separator {
     letter-spacing: .75rem;
     padding-left: 0;
   }
+}
+
+table {
+  tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.wp-block-table td, .wp-block-table th {
+  border: none;
+  padding: .75rem 1.25rem;
+  vertical-align: middle;
 }
