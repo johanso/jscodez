@@ -84,7 +84,7 @@ const initPageFunctionalities = () => {
   // Go to top
   goTop.addEventListener("click", () => {
     window.scroll({
-      top: 0,
+      top: 16,
       behavior: 'smooth'
     })
   })
