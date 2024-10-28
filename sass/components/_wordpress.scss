@@ -16,13 +16,15 @@
 }
 
 pre.wp-block-code.consola {
-  margin: -4.25rem 0 1rem;
-  padding-top: 2rem;
+  margin: -1.5rem 0 1rem;
   position: relative;
   z-index: 0;
   code {
-    border-radius: 0 0 .75rem .75rem;
+    border-radius: .75rem;
     padding: .5rem 1rem;
+    font-size: .85rem;
+    color: #4b4b4b;
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
