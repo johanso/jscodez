@@ -110,7 +110,10 @@ const handleScroll = () => {
     }
 
     if (sidebarFloat) {
-      if (prevScrollPos < currentScrollPos) {
+
+      const headerHeight = header.offsetHeight
+
+      if (currentScrollPos > headerHeight) {
         sidebarFloat.classList.add("hidden");
       } else {
         sidebarFloat.classList.remove("hidden");
