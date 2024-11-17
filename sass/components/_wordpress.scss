@@ -53,3 +53,40 @@ table {
   padding: .75rem 1.25rem;
   vertical-align: middle;
 }
+
+ol.wp-block-list,
+ul.wp-block-list {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  li {
+    margin-bottom: .5rem;
+  }
+}
+
+ul.wp-block-list {
+  padding-left: 1.5rem;
+}
+
+ol.wp-block-list {
+  padding-left: 2rem;
+}
+
+ol.wp-block-list li::marker {
+  font-size: 90%;
+  font-weight: 700;
+}
+
+ol.wp-block-list li::marker {
+  content:"{" counter(list-item)"}: ";
+}
+
+ul.wp-block-list li::marker {
+  font-size: 90%;
+  font-weight: 700;
+}
+
+ul.wp-block-list li::marker {
+    font-size: 1.75rem;
+    color: #f0db4f;
+    line-height: 0;
+}
