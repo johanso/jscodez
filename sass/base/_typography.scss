@@ -64,6 +64,7 @@ h2 {
     position: relative;
     padding-left: 1rem;
     margin-top: 2.5rem;
+    text-transform: capitalize;
     &::before {
       content: '';
       width: 4px;
