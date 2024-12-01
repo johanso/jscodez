@@ -68,25 +68,18 @@ ul.wp-block-list {
 }
 
 ol.wp-block-list {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 ol.wp-block-list li::marker {
   font-size: 90%;
-  font-weight: 700;
-}
-
-ol.wp-block-list li::marker {
-  content:"{" counter(list-item)"}: ";
 }
 
 ul.wp-block-list li::marker {
   font-size: 90%;
-  font-weight: 700;
 }
 
 ul.wp-block-list li::marker {
-    font-size: 1.75rem;
-    color: #f0db4f;
+    font-size: 1.5rem;
     line-height: 0;
 }

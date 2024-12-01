@@ -5,5 +5,5 @@
 .main-container {
   @include responsive-container();
   margin-top: 1.5rem;
-  margin-bottom: map-get($sizes, xl);
+  margin-bottom: 2rem;
 }
