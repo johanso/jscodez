@@ -17,6 +17,7 @@
     font-size: 1.1rem;
     background-color: $white-color;
     border: solid 4px $secondary-color;
+    border-radius: map-get($sizes, s);
     padding: 1.25rem map-get($sizes, m) map-get($sizes, m);
     position: relative;
     transition: top, left .2s ease-in-out;
