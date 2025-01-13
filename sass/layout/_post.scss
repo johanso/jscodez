@@ -50,6 +50,7 @@
       display: grid;
       grid-template-columns: 1fr 19rem;
       gap: map-get($sizes, l);
+      padding-top: 0;
     }
     
     @include mq(xl) {
