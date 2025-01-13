@@ -39,15 +39,14 @@
 
   &__content {
     padding-top: calc(map-get($sizes, xl) + map-get($sizes, s));
+    margin-bottom: map-get($sizes, xl);
 
     @include mq(md) {
       background: $white-color;
       border-radius: map-get($sizes, xs);
-      padding-top: calc(map-get($sizes, xl) + map-get($sizes, m));
     }
 
     @include mq(lg) {
-      padding-top: map-get($sizes, m);
       display: grid;
       grid-template-columns: 1fr 19rem;
       gap: map-get($sizes, l);
