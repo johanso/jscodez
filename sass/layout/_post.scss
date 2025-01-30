@@ -4,6 +4,18 @@
 
 .post {
 
+  .main-container {
+    @include responsive-container();
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    
+    @include mq(lg) {
+      display: grid;
+      grid-template-columns: 2.5fr 1fr;
+      gap: map-get($sizes, xxl);
+    }
+  }
+
   &__header {
     position: relative;
   }
