@@ -36,11 +36,25 @@
 
   // add widgets
   function travels_widgets() {
+    // Sidebar original para posts
     register_sidebar(
       array(
         'name' => 'Sidebar post',
         'id' => 'sidebar-post',
         'description' => 'Standard Sidebar',
+        'before_widget' => '<section id="%1$s" class="sidebar__widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>'
+      )
+    );
+
+    // Nuevo sidebar para categoría js-dom
+    register_sidebar(
+      array(
+        'name' => 'Sidebar JS DOM',
+        'id' => 'sidebar-js-dom',
+        'description' => 'Sidebar específico para posts de JS DOM',
         'before_widget' => '<section id="%1$s" class="sidebar__widget %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3 class="widget-title">',
